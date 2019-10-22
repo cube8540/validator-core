@@ -4,6 +4,9 @@ import lombok.Value;
 
 import java.util.Objects;
 
+/**
+ * 유효성 에러 메시지
+ */
 @Value
 public class ValidationError {
 

@@ -6,6 +6,9 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ * 객체가 유효하지 않은 것을 나타내는 예외 클래스
+ */
 public class ValidateException extends RuntimeException {
 
     private Collection<ValidationError> errors;
