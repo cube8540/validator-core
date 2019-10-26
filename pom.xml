@@ -6,7 +6,7 @@
 
     <groupId>cube8540.validator</groupId>
     <artifactId>validator-core</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.1</version>
     <description>Java 유효성 검사 인터페이스</description>
     <url>https://github.com/cube8540/validator-core</url>
 
