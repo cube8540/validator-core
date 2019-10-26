@@ -1,7 +1,7 @@
 package cube8540.validator.core;
 
-import lombok.Value;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertFalse;
@@ -13,59 +13,41 @@ public class ValidatorTest {
 
     @Test
     public void createObject() {
-        TestObject testObject = new TestObject("TEST_VALUE");
-        Validator<TestObject> validator = Validator.of(testObject);
+        Object testObject = Mockito.mock(Object.class);
+        Validator<Object> validator = Validator.of(testObject);
 
         assertEquals(validator.getTarget(), testObject);
         assertFalse(validator.getResult().hasError());
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void registerRuleIsValidMethodReturnTrue() {
-        TestObject testObject = new TestObject("TEST_VALUE");
-        Validator<TestObject> validator = Validator.of(testObject);
+        Object testObject = Mockito.mock(Object.class);
+        ValidationRule<Object> rule = Mockito.mock(ValidationRule.class);
+        Validator<Object> validator = Validator.of(testObject);
 
-        Validator<TestObject> hasRuleValidator = validator.registerRule(new TestMustReturnTrueValidationRule());
+        Mockito.when(rule.isValid(testObject)).thenReturn(Boolean.TRUE);
+
+        Validator<Object> hasRuleValidator = validator.registerRule(rule);
         assertEquals(hasRuleValidator, validator);
         assertFalse(hasRuleValidator.getResult().hasError());
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void registerRuleIsValidMethodReturnFalse() {
-        TestObject testObject = new TestObject("TEST_VALUE");
-        Validator<TestObject> validator = Validator.of(testObject);
+        Object testObject = Mockito.mock(Object.class);
+        ValidationRule<Object> rule = Mockito.mock(ValidationRule.class);
+        Validator<Object> validator = Validator.of(testObject);
 
-        Validator<TestObject> hasRuleValidator = validator.registerRule(new TestMustReturnFalseValidationRule());
+        Mockito.when(rule.isValid(testObject)).thenReturn(Boolean.FALSE);
+        Mockito.when(rule.error()).thenReturn(ERROR);
+
+        Validator<Object> hasRuleValidator = validator.registerRule(rule);
         assertEquals(hasRuleValidator, validator);
         assertTrue(hasRuleValidator.getResult().hasError());
         assertTrue(hasRuleValidator.getResult().getErrors().contains(ERROR));
-    }
-
-    @Value
-    private static final class TestObject {
-        private String value;
-    }
-
-    private static final class TestMustReturnTrueValidationRule implements ValidationRule<TestObject> {
-        @Override
-        public boolean isValid(TestObject target) {
-            return true;
-        }
-        @Override
-        public ValidationError error() {
-            throw new UnsupportedOperationException();
-        }
-    }
-
-    private static final class TestMustReturnFalseValidationRule implements ValidationRule<TestObject> {
-        @Override
-        public boolean isValid(TestObject target) {
-            return false;
-        }
-        @Override
-        public ValidationError error() {
-            return ERROR;
-        }
     }
 
 }
