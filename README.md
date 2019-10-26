@@ -1,4 +1,4 @@
-#validator-core
+# validator-core
 객체의 유효성을 확인하기 위한 주요 인터페이스 및 클래스
 
 ## 1. Installation
