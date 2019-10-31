@@ -84,7 +84,7 @@ ValidationRule<YourClass> specification = new YourValidationSpecification1()
 
 // 유효성 검사후 검사 결과를 얻기
 ValidationResult result = Validator.of(yourObject)
-    .registerRule(new YourValidationRule())
+    .registerRule(new YourValidationRule(specification))
     .getResult();
 ```
 
