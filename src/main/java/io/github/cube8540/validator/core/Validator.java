@@ -1,4 +1,4 @@
-package cube8540.validator.core;
+package io.github.cube8540.validator.core;
 
 import java.util.Objects;
 

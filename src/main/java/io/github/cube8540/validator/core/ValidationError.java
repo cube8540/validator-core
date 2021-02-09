@@ -1,4 +1,4 @@
-package cube8540.validator.core;
+package io.github.cube8540.validator.core;
 
 import lombok.Value;
 
@@ -10,8 +10,8 @@ import java.util.Objects;
 @Value
 public class ValidationError {
 
-    private String property;
-    private String message;
+    String property;
+    String message;
 
     public ValidationError(String property, String message) {
         this.property = Objects.requireNonNull(property);

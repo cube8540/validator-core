@@ -1,6 +1,6 @@
-package cube8540.validator.core;
+package io.github.cube8540.validator.core;
 
-import cube8540.validator.core.exception.ValidateException;
+import io.github.cube8540.validator.core.exception.ValidateException;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

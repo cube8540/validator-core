@@ -1,4 +1,4 @@
-package cube8540.validator.core;
+package io.github.cube8540.validator.core;
 
 /**
  * 유효성 검사가 가능하다는 것을 나타내는 인터페이스

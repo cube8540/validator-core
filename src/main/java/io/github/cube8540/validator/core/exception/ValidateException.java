@@ -1,6 +1,6 @@
-package cube8540.validator.core.exception;
+package io.github.cube8540.validator.core.exception;
 
-import cube8540.validator.core.ValidationError;
+import io.github.cube8540.validator.core.ValidationError;
 
 import java.util.Arrays;
 import java.util.Collection;

@@ -1,8 +1,8 @@
-package cube8540.validator.core.impl;
+package io.github.cube8540.validator.core.impl;
 
-import cube8540.validator.core.ValidationError;
-import cube8540.validator.core.ValidationRule;
-import cube8540.validator.core.ValidationSpecification;
+import io.github.cube8540.validator.core.ValidationError;
+import io.github.cube8540.validator.core.ValidationRule;
+import io.github.cube8540.validator.core.ValidationSpecification;
 
 public class DefaultValidationRule<T> implements ValidationRule<T> {
 

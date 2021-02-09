@@ -1,4 +1,4 @@
-package cube8540.validator.core;
+package io.github.cube8540.validator.core;
 
 /**
  * 유효성 명세서 추상 클래스로 {@link ValidationSpecification}를 구현하고 있으며

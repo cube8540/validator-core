@@ -1,4 +1,4 @@
-package cube8540.validator.core;
+package io.github.cube8540.validator.core;
 
 /**
  * 유효성 명세서 인터페이스

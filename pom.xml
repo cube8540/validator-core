@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cube8540.validator</groupId>
+    <groupId>io.github.cube8540</groupId>
     <artifactId>validator-core</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <description>Java 유효성 검사 인터페이스</description>
     <url>https://github.com/cube8540/validator-core</url>
 

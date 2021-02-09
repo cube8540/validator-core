@@ -1,7 +1,7 @@
-package cube8540.validator.core.impl;
+package io.github.cube8540.validator.core.impl;
 
-import cube8540.validator.core.ValidationError;
-import cube8540.validator.core.ValidationSpecification;
+import io.github.cube8540.validator.core.ValidationError;
+import io.github.cube8540.validator.core.ValidationSpecification;
 import org.junit.Test;
 import org.mockito.Mockito;
 
