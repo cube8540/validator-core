@@ -12,7 +12,7 @@ OpenJDK 11 이상
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>cube8540.validator</groupId>
+            <groupId>io.github.cube8540</groupId>
             <artifactId>validator-core</artifactId>
             <version>1.1.1</version>
         </dependency>
@@ -22,7 +22,7 @@ OpenJDK 11 이상
         jcenter()
     }
     dependencies {
-        compile 'cube8540.validator:validator-core:1.1.1'
+        compile 'io.github.cube8540:validator-core:1.1.1'
     }
 
 ## 2. Getting Started
