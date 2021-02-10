@@ -6,7 +6,8 @@
 
     <groupId>io.github.cube8540</groupId>
     <artifactId>validator-core</artifactId>
-    <version>1.2.0</version>
+    <name>validator-core</name>
+    <version>1.2.0-RELEASE</version>
     <description>Java 유효성 검사 인터페이스</description>
     <url>https://github.com/cube8540/validator-core</url>
 
@@ -18,9 +19,13 @@
     </developers>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>validator-core</id>
-            <url>https://api.bintray.com/maven/cube8540/validator/validator-core/;publish=1</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 

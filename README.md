@@ -4,25 +4,17 @@
 ## 1. Installation
 OpenJDK 11 이상
 #### 1.1. maven
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com/</url>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>io.github.cube8540</groupId>
             <artifactId>validator-core</artifactId>
-            <version>1.1.1</version>
+            <version>1.2.0-RELEASE</version>
         </dependency>
     </dependencies>
 #### 1.2. Gradle
-    repositories {
-        jcenter()
-    }
     dependencies {
-        compile 'io.github.cube8540:validator-core:1.1.1'
+
+        compile 'io.github.cube8540:validator-core:1.2.0-RELEASE'
     }
 
 ## 2. Getting Started
