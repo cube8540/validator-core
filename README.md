@@ -78,6 +78,9 @@ ValidationRule<YourClass> specification = new YourValidationSpecification1()
 ValidationResult result = Validator.of(yourObject)
     .registerRule(new YourValidationRule(specification))
     .getResult();
+    
+// ValidationResult 형식이 아닌 Boolean 형식으로 결과값 반환
+boolean result = specification.isValid(yourObject);
 ```
 
 ## 3. License
