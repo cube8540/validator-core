@@ -1,15 +1,15 @@
 package io.github.cube8540.validator.core;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AbstractValidationSpecificationTest {
 
     @Test
-    public void and() {
+    void and() {
         Object testObject = Mockito.mock(Object.class);
         AbstractValidationSpecification<Object> trueLeftSpecific = implement(true);
         AbstractValidationSpecification<Object> falseLeftSpecific = implement(false);
@@ -21,7 +21,7 @@ public class AbstractValidationSpecificationTest {
     }
 
     @Test
-    public void or() {
+    void or() {
         Object testObject = Mockito.mock(Object.class);
         AbstractValidationSpecification<Object> trueLeftSpecific = implement(true);
         AbstractValidationSpecification<Object> falseLeftSpecific = implement(false);
@@ -33,7 +33,7 @@ public class AbstractValidationSpecificationTest {
     }
 
     @Test
-    public void not() {
+    void not() {
         Object testObject = Mockito.mock(Object.class);
         AbstractValidationSpecification<Object> trueSpecific = implement(true);
         AbstractValidationSpecification<Object> falseSpecific = implement(false);
@@ -43,7 +43,7 @@ public class AbstractValidationSpecificationTest {
     }
 
     @Test
-    public void composite() {
+    void composite() {
         Object testObject = Mockito.mock(Object.class);
         ValidationSpecification<Object> spec1 =  implement(true).and(implement(false)).or(implement(true));
         ValidationSpecification<Object> spec2 = implement(false).or(implement(true).or(implement(false)));

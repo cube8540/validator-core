@@ -82,6 +82,17 @@ ValidationResult result = Validator.of(yourObject)
 // ValidationResult 형식이 아닌 Boolean 형식으로 결과값 반환
 boolean result = specification.isValid(yourObject);
 ```
+#### 2.3. Operator 이용
+```
+// 가장 기본적인 Operator 생성
+Operator<YourClassType> operator = new ValidationOperator<YourClassType>(Operator.OperatorType.AND)
+    .addOperand(target -> ...return true/false)
+    .addOperand(target -> ...return true/false)
+    .....;
+
+// 결과 얻기
+boolean result = operator.isValid(yourObject);
+```
 
 ## 3. License
 ```

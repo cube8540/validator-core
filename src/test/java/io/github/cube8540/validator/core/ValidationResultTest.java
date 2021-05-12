@@ -1,18 +1,18 @@
 package io.github.cube8540.validator.core;
 
 import io.github.cube8540.validator.core.exception.ValidateException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertNotNull;
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ValidationResultTest {
 
     @Test
-    public void createObjectErrorIsNotNull() {
+    void createObjectErrorIsNotNull() {
         ValidationResult result = ValidationResult.init();
 
         assertNotNull(result.getErrors());
@@ -20,7 +20,7 @@ public class ValidationResultTest {
     }
 
     @Test
-    public void addError() {
+    void addError() {
         ValidationResult result = ValidationResult.init();
         ValidationError error = new ValidationError("TEST_PROPERTY", "TEST_MESSAGE");
 
@@ -30,14 +30,14 @@ public class ValidationResultTest {
     }
 
     @Test
-    public void hasError() {
+    void hasError() {
         ValidationResult hasError = ValidationResult
                 .init().registerError(new ValidationError("TEST_PROPERTY", "TEST_MESSAGE"));
         assertTrue(hasError.hasError());
     }
 
     @Test
-    public void hasErrorThrowException() {
+    void hasErrorThrowException() {
         ValidationResult hasError = ValidationResult.init();
         ValidationError error = new ValidationError("TEST_PROPERTY", "TEST_MESSAGE");
 
@@ -47,7 +47,7 @@ public class ValidationResultTest {
     }
 
     @Test
-    public void notHasErrorThrowException() {
+    void notHasErrorThrowException() {
         ValidationResult result = ValidationResult.init();
 
         ValidateException exception = getErrorThrowsException(result);

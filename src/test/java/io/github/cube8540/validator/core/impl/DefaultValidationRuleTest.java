@@ -2,12 +2,12 @@ package io.github.cube8540.validator.core.impl;
 
 import io.github.cube8540.validator.core.ValidationError;
 import io.github.cube8540.validator.core.ValidationSpecification;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DefaultValidationRuleTest {
 
@@ -16,7 +16,7 @@ public class DefaultValidationRuleTest {
 
     @Test
     @SuppressWarnings("unchecked")
-    public void isValid() {
+    void isValid() {
         Object testObject = Mockito.mock(Object.class);
         ValidationSpecification<Object> falseSpec = Mockito.mock(ValidationSpecification.class);
         ValidationSpecification<Object> trueSpec = Mockito.mock(ValidationSpecification.class);
@@ -32,7 +32,7 @@ public class DefaultValidationRuleTest {
 
     @Test
     @SuppressWarnings("unchecked")
-    public void error() {
+    void error() {
         ValidationSpecification<Object> spec = Mockito.mock(ValidationSpecification.class);
         DefaultValidationRule<Object> rule = DefaultValidationRule.withSpecification(spec).create(PROPERTY, MESSAGE);
         ValidationError error = rule.error();

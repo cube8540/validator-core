@@ -1,13 +1,13 @@
 package io.github.cube8540.validator.core;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ValidationErrorTest {
 
     @Test
-    public void createObjectWithNullThrowNullPointException() {
+    void createObjectWithNullThrowNullPointException() {
         NullPointerException exception = null;
         try {
             new ValidationError(null, null);
