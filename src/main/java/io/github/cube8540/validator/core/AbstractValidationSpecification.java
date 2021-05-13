@@ -4,7 +4,7 @@ package io.github.cube8540.validator.core;
  * 유효성 명세서 추상 클래스로 {@link ValidationSpecification}를 구현하고 있으며
  * 이 클래스를 상속 받아 {@link #isValid(Object)} 메소드를 구현한다.
  *
- * {@link #and(ValidationSpecification)}, {@link #or(ValidationSpecification)}, {@link #not()} 메소드에는
+ * {@link #and(Validatable)}, {@link #or(Validatable)}, {@link #not()} 메소드에는
  * final 키워드가 붙어 오버라이딩 할 수 없다.
  *
  * @param <T> 유효성을 검사할 객체의 타입
@@ -12,12 +12,12 @@ package io.github.cube8540.validator.core;
 public abstract class AbstractValidationSpecification<T> implements ValidationSpecification<T> {
 
     @Override
-    public final ValidationSpecification<T> and(ValidationSpecification<T> specification) {
+    public final ValidationSpecification<T> and(Validatable<T> specification) {
         return new And<>(this, specification);
     }
 
     @Override
-    public final ValidationSpecification<T> or(ValidationSpecification<T> specification) {
+    public final ValidationSpecification<T> or(Validatable<T> specification) {
         return new Or<>(this, specification);
     }
 
@@ -28,10 +28,10 @@ public abstract class AbstractValidationSpecification<T> implements ValidationSp
 
     private static class And<N> extends AbstractValidationSpecification<N> {
 
-        private final ValidationSpecification<N> left;
-        private final ValidationSpecification<N> right;
+        private final Validatable<N> left;
+        private final Validatable<N> right;
 
-        private And(ValidationSpecification<N> left, ValidationSpecification<N> right) {
+        private And(Validatable<N> left, Validatable<N> right) {
             this.left = left;
             this.right = right;
         }
@@ -44,10 +44,10 @@ public abstract class AbstractValidationSpecification<T> implements ValidationSp
 
     private static class Or<N> extends AbstractValidationSpecification<N> {
 
-        private final ValidationSpecification<N> left;
-        private final ValidationSpecification<N> right;
+        private final Validatable<N> left;
+        private final Validatable<N> right;
 
-        private Or(ValidationSpecification<N> left, ValidationSpecification<N> right) {
+        private Or(Validatable<N> left, Validatable<N> right) {
             this.left = left;
             this.right = right;
         }
@@ -60,9 +60,9 @@ public abstract class AbstractValidationSpecification<T> implements ValidationSp
 
     private static class Not<N> extends AbstractValidationSpecification<N> {
 
-        private final ValidationSpecification<N> specification;
+        private final Validatable<N> specification;
 
-        private Not(ValidationSpecification<N> specification) {
+        private Not(Validatable<N> specification) {
             this.specification = specification;
         }
 

@@ -1,18 +1,18 @@
 package io.github.cube8540.validator.core;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ValidatorTest {
 
     private static final ValidationError ERROR = new ValidationError("TEST_PROPERTY", "TEST_VALUE");
 
     @Test
-    public void createObject() {
+    void createObject() {
         Object testObject = Mockito.mock(Object.class);
         Validator<Object> validator = Validator.of(testObject);
 
@@ -22,7 +22,7 @@ public class ValidatorTest {
 
     @Test
     @SuppressWarnings("unchecked")
-    public void registerRuleIsValidMethodReturnTrue() {
+    void registerRuleIsValidMethodReturnTrue() {
         Object testObject = Mockito.mock(Object.class);
         ValidationRule<Object> rule = Mockito.mock(ValidationRule.class);
         Validator<Object> validator = Validator.of(testObject);
@@ -36,7 +36,7 @@ public class ValidatorTest {
 
     @Test
     @SuppressWarnings("unchecked")
-    public void registerRuleIsValidMethodReturnFalse() {
+    void registerRuleIsValidMethodReturnFalse() {
         Object testObject = Mockito.mock(Object.class);
         ValidationRule<Object> rule = Mockito.mock(ValidationRule.class);
         Validator<Object> validator = Validator.of(testObject);
