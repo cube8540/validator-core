@@ -8,13 +8,13 @@ OpenJDK 11 이상
         <dependency>
             <groupId>io.github.cube8540</groupId>
             <artifactId>validator-core</artifactId>
-            <version>1.2.0-RELEASE</version>
+            <version>1.3.0-RELEASE</version>
         </dependency>
     </dependencies>
 #### 1.2. Gradle
     dependencies {
 
-        compile 'io.github.cube8540:validator-core:1.2.0-RELEASE'
+        compile 'io.github.cube8540:validator-core:1.3.0-RELEASE'
     }
 
 ## 2. Getting Started
